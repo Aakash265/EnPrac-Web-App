@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-primary col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+  <div class="container-fluid">
+    <a class="navbar-brand">EnPrac</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="http://localhost:8000/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+
+<!-- Dictionary -->
+<div class="container my-4">
+  <div class="text-warning" align="center">
+    <h1 class="display-3"><strong>DICTIONARY</strong></h1>
+  </div>
+  <br>
+  <h1 class="display-6" align="center">Type the word in the search bar to get the meaning.</h1>
+
+  <br>
+
+  <form action="search/mean" , method="post">
+
+    {% csrf_token %}
+
+    <p align="center">
+    <div class="container-fluid my-4">
+      <form class="d-flex">
+        <input class="form-control me-2 shadow p-2 mb-5 bg-body rounded" name="value" type="search"
+          placeholder="Enter the word" aria-label="Search">
+      </form>
+      <br>
+      <br>
+      <br>
+      <button class="btn btn-warning position-absolute start-50 translate-middle" type="submit">
+        <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg> Search</h5>
+      </button>
+      <br>
+      <br>
+    </div>
+    </p>
+  </form>
+</div>
+
+<!-- Features -->
+<div class="container px-4 py-5" id="hanging-icons">
+  <h2 class="pb-2 border-bottom">Dictionary Features :--</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em">
+          <use xlink:href="#toggles2"></use>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-primary"><i>Meaning</i></h2>
+        <p>Get the different meanings of any word you enter in the search bar.</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em">
+          <use xlink:href="#cpu-fill"></use>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-primary"><i>Synonym</i></h2>
+        <p>Synonym means a word or phrase that has the same meaning as another word or phrase in the same language.</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em">
+          <use xlink:href="#tools"></use>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-primary"><i>Antonym</i></h2>
+        <p>Antonym means a word that means the opposite of another word.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container">
+  <p class="float-end"><a href="#">Back to top</a></p>
+  <p>© 2021–2022 EnPrac, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+
+{% endblock %}

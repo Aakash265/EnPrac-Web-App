@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static % }
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div>
+    <nav class="navbar navbar-light bg-light col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+        <div class="container-fluid">
+            <a class="navbar-brand">EnPrac</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:8000/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container my-4">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="alert alert-primary" role="alert">
+            <h4 class="display-6">Hello User, please register to continue!!!</h4>
+          </div>
+        {{ form | crispy }}
+        <input type="submit" class="btn btn-success my-4" name="Create User" value="SignUp">
+
+        <br>
+        <h6>Already have an account?
+        <a href="http://localhost:8000/">Login</a>
+        </h6>
+    </form>
+    <br>
+</div>
+
+{% endblock %}

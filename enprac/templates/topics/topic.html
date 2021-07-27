@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-primary col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+  <div class="container-fluid">
+    <a class="navbar-brand">EnPrac</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="http://localhost:8000/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="position-absolute top-0 start-50 translate-middle-x text-light">
+  <h3 class="display-6">Topics</h3>
+</div>
+
+
+<div>
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+    More questions will be uploaded soon. <strong>Stay Tuned!!!</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <a href="http://localhost:8000/home"><button
+      class="btn btn-primary position-absolute start-0 my-2 mx-4">Back</button></a>
+  <br>
+  <br>
+ 
+
+  <!-- Topics -->
+  <div class="container my-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/topic1.jfif' %}" class="card-img-top" alt="image">
+          <div class="card-body">
+            <h5 class="card-title text-danger">Tenses</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <a href="http://localhost:8000/topics/tense"><button class="btn btn-danger">View Questions</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/topic2.jfif' %}" class="card-img-top" alt="image">
+          <div class="card-body">
+            <h5 class="card-title text-success">Articles</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <a href="http://localhost:8000/topics/article"><button class="btn btn-success">View Questions</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/topic3.jfif' %}" class="card-img-top" alt="image">
+          <div class="card-body">
+            <h5 class="card-title text-secondary">Vocabulary</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content.</p>
+            <a href="http://localhost:8000/topics/vocabulary"><button class="btn btn-secondary">View
+                Questions</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'images/topic4.jfif' %}" class="card-img-top" alt="image">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Subject-Verb Agreement</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <a href="http://localhost:8000/topics/subject"><button class="btn btn-warning">View Questions</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2021–2022 EnPrac, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+
+
+
+  {% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<nav class="navbar navbar-dark bg-success col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+    <div class="container-fluid">
+        <a class="navbar-brand">EnPrac</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="http://localhost:8000/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class='display-6'>Article Questions :--
+        <a href="http://localhost:8000/search"><button class="btn btn-success position-absolute end-0 my-4 mx-4">Access Dictionary</button></a>
+    </h1>
+    <br>
+    {% for i in data %}
+    <ul>
+        <li>{{j}} {{i.ques}}</li>
+    </ul>
+    <ol type="A">
+        <li>{{i.option1}}</li>
+        <li>{{i.option2}}</li>
+        <li>{{i.option3}}</li>
+        <li>{{i.option4}}</li>
+    </ol>
+    <div>
+        <div class="accordion" id="accordionExample">
+            <div class="dropdown">
+                <button class="btn btn-sm btn-success dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    View answer
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                    <li>Option - {{i.answer}}</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+
+    <a href="http://localhost:8000/topics"><button class="btn btn-success">Back</button></a>
+    <br>
+
+      <!-- Footer -->
+  <footer class="container my-4">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2021–2022 EnPrac, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+
+    {% endblock %}

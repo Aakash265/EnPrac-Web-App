@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <h3><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book-half"
+            viewBox="0 0 16 16">
+            <path
+              d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+          </svg> EnPrac</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 position-absolute top-2 end-0 mx-4">
+          <li class="nav-item mx-4">
+            <a class="nav-link active" aria-current="page" href="http://localhost:8000/home"><b><u>HOME</u></b></a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link" href="http://localhost:8000/about"><b>ABOUT</b></a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link" href="http://localhost:8000/logout" tabindex="-1"><b>LOGOUT</b></a>
+          </li>
+          <li class="nav-item dropdown mx-4">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <b>JUMP TO</b>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="http://localhost:8000/topics">Topics</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="http://localhost:8000/search">Dictionary</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Carousel -->
+  <div id="myCarousel" class="carousel slide carousel-fade " data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1"
+        class="active"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/carousel01.jfif' %}" class="d-block w-100" alt="image1">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Hello<strong> {{request.user}}</strong>!!!</h1>
+            <h1>Welcome to EnPrac!!!</h1>
+            <p>An English Practice web application that consists of a set of questions of different topics in English
+              vocabulary and grammar.</p>
+            <p><a class="btn btn-lg btn-outline-light" href="http://localhost:8000/topics">Topics</a>
+              <a class="btn btn-lg btn-outline-light" href="http://localhost:8000/search">Dictionary</a>
+              <a class="btn btn-lg btn-outline-light" href="http://localhost:8000/about">About Us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/carousel02.jfif' %}" class="d-block w-100" alt="image2">
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Practice Sets - A bulk of questions!!!</h1>
+            <p>Here you can practice and learn different topics of english grammar.</p>
+            <p><a class="btn btn-lg btn-outline-light" href="http://localhost:8000/topics">Topics</a>
+              <a class="btn btn-lg btn-outline-light" href="http://localhost:8000/search">Dictionary</a>
+              <a class="btn btn-lg btn-outline-light" href="http://localhost:8000/about">About Us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/carousel03.jfif' %}" class="d-block w-100" alt="image2">
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Dictionary - Get it right here!!!</h1>
+            <p>Got Stuck in meanings? Use the dictionary provided.</p>
+            <p><a class="btn btn-lg btn-outline-light" href="http://localhost:8000/topics">Topics</a>
+              <a class="btn btn-lg btn-outline-light" href="http://localhost:8000/search">Dictionary</a>
+              <a class="btn btn-lg btn-outline-light" href="http://localhost:8000/about">About Us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <br>
+
+  <!-- Footer -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2021–2022 EnPrac, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<body class="text-center" background="{% static 'images/loginpage.jfif' %}">
+  <nav class="navbar navbar-light bg-light col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+    <div class="container-fluid">
+        <a class="navbar-brand">EnPrac</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-4">
+    <p align="center">
+    <main class="form-signin">
+      <form action="" method="post">
+        {% csrf_token %}
+        <h1 class="display-4 text-light"><strong>EnPrac - Practice English</strong></h1>
+        <br>
+        <h1 class="h3 mb-3 fw-normal display-6 text-light">Please Sign in</h1>
+        <br>
+        <br>
+        <h4 class="my-2 text-light">Username :--</h4>
+        <br>
+        <div class="form my-4">
+          <input type="username"
+            class="form-control w-25 p-3 position-absolute start-50 translate-middle shadow p-3 mb-5 bg-body rounded"
+            name="username" placeholder="Enter username">
+        </div>
+        <br>
+        <br>
+        <h4 class="my-2 text-light">Password :--</h4>
+        <br>
+        <div class="form my-4">
+          <input type="password"
+            class="form- w-25 p-3 position-absolute start-50 translate-middle shadow p-3 mb-5 bg-body rounded"
+            name="password" placeholder="Enter password">
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-primary my-4" type="submit">Sign in</button>
+      </form>
+    </main>
+    <h6 class="text-light">New User?
+      <a href="http://localhost:8000/register">Register</a>
+    </h6>
+
+    <div class="alert alert-success" role="alert">
+      {% for message in messages %}
+      <p id="messages"><h5>{{ message }}</h5></p>
+      {% endfor %}
+    </div>
+
+    </p>
+
+  </body>
+</div>
+
+{% endblock %}
